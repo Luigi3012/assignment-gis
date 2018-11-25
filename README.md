@@ -28,4 +28,4 @@ Fill in (either in English, or in Slovak):
 1. Application runs on Node.js with Express, backend is written in Typescript
 2. Frontend uses Knockoutjs and W3.css template
 3. Map uses Leaflet with MapBox tiles
-4. OSM data are stored in Postgre database with Postgis extension, communication with serve is hadle by node-postgre
+4. OSM data are stored in Postgre database with Postgis extension, communication with server is handled by node-postgre
