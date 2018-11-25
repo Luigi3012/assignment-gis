@@ -20,8 +20,12 @@ Build a map-based application, which lets the user see geo-based data on a map a
 
 Fill in (either in English, or in Slovak):
 
-**Application description**: `<fill in>`
+**Application description**: Application provides overview of shopping centers and malls around Bratislava and nearby villages. Users can filter out nearby shopping malls or find out which shops do they contain.
 
 **Data source**: `<fill in>`
 
-**Technologies used**: `<fill in>`
+**Technologies used**: 
+1. Application runs on Node.js with Express, backend is written in Typescript
+2. Frontend uses Knockoutjs and W3.css template
+3. Map uses Leaflet with MapBox tiles
+4. OSM data are stored in Postgre database with Postgis extension, communication with serve is hadle by node-postgre
