@@ -1,0 +1,32 @@
+{
+  "name": "pdtmap",
+  "version": "1.0.0",
+  "description": "PDT class project, POSTGIS + Frontend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node index.ts"
+  },
+  "keywords": [
+    "Map",
+    "Leaflet",
+    "GIS",
+    "Postgre",
+    "Postgis",
+    "Shopping"
+  ],
+  "author": "Lukas Belaj",
+  "license": "ISC",
+  "dependencies": {
+    "@types/es6-shim": "^0.31.39",
+    "@types/pg": "^7.4.11",
+    "express": "^4.16.4",
+    "geojson": "^0.5.0",
+    "jquery": "^3.3.1",
+    "pg": "^7.6.1",
+    "typescript": "^3.1.6"
+  },
+  "devDependencies": {
+    "ts-node": "^7.0.1"
+  }
+}
