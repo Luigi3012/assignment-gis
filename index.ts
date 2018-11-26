@@ -32,6 +32,12 @@ app.get('/api/mall/:name', asyncMiddleware(async (req, res, next) => {
     res.json(JSON.stringify(shops));
 }));
 
+app.get('/api/parking', asyncMiddleware(async (req, res, next) => {
+    const parking = await pgService.getParkingLots()
+    res.json(JSON.stringify(parking));
+}));
+
+
 // Serve html
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/frontend/index.html'));

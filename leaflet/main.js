@@ -4,6 +4,27 @@ var shopPoints = [];
 var mePoint;
 var meRadius;
 var radius = 5000; // meters
+const myCustomColour = '#583470'
+
+const markerHtmlStyles = `
+  background-color: ${myCustomColour};
+  width: 3rem;
+  height: 3rem;
+  display: block;
+  left: -1.5rem;
+  top: -1.5rem;
+  position: relative;
+  border-radius: 3rem 3rem 0;
+  transform: rotate(45deg);
+  border: 1px solid #FFFFFF`
+
+const myIcon = L.divIcon({
+  className: "my-custom-pin",
+  iconAnchor: [0, 24],
+  labelAnchor: [-6, 0],
+  popupAnchor: [0, -36],
+  html: `<span style="${markerHtmlStyles}" />`
+})
 
 function AppViewModel() {
     self = this;
@@ -55,6 +76,7 @@ function showPosition(position) {
         mePoint.remove();
         meRadius.remove();
     }
+    var myIcon = L.divIcon({className: 'my-div-icon'});
     mePoint = L.marker(coords).addTo(mymap).bindPopup("Me.");
     meRadius = L.circle(coords, {radius: radius}).addTo(mymap);
     getNearbyCenters(position);
@@ -86,6 +108,24 @@ function getAllCenters(){
         }
         clearMap();
         for(var i = 0; i< parsed.length; i++){
+            var poly = L.geoJSON(parsed[i].geojson).addTo(mymap).bindPopup(parsed[i].name);
+            polygons.push(poly);
+            poly.on('click', onPolyClick);
+        }  
+    })
+}
+
+function getParking(){
+    $.getJSON("/api/parking", function(data) { 
+        var parsed = JSON.parse(data);
+        console.log(parsed);
+        if(typeof mePoint !== 'undefined'){
+            mePoint.remove();
+            meRadius.remove();
+        }
+        clearMap();
+        for(var i = 0; i< parsed.length; i++){
+            console.log(parsed[i].geojson);
             var poly = L.geoJSON(parsed[i].geojson).addTo(mymap).bindPopup(parsed[i].name);
             polygons.push(poly);
             poly.on('click', onPolyClick);

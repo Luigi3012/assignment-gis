@@ -41,6 +41,14 @@ export class PostgreService{
         return res.rows;
     }
 
+    public async getParkingLots(){
+        this.client = new pg.Client(this.conString);
+        await this.client.connect();
+        const res = await this.client.query(this.parkingLots)
+        await this.client.end();
+        return res.rows;
+    }
+
     //Queries with placeholder values
     shopsInMall = {
         name: 'shops-in-mall',
@@ -54,6 +62,12 @@ export class PostgreService{
         + ' WHERE ST_DistanceSphere(ST_TRANSFORM(way,4326), ST_MakePoint($1, $2)) <= $3',
         values: [1,1,1]
     }
+
+    parkingLots = {
+        name: 'fetch-parking',
+        text: 'SELECT name, st_asgeojson(ST_Transform(way, 4326))::json as geojson FROM public.ways_parking'
+    }
+
 
 
 }
