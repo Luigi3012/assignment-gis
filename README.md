@@ -1,4 +1,5 @@
 # Overview
+Author: Lukas Belaj
 
 Application provides overview of shopping centers and malls around Bratislava and nearby villages.
 Features:
