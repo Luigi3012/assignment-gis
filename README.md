@@ -23,6 +23,7 @@ The fronted contains simple buttons to retriev current location with nearby shop
 Geofeature are retrieved from server in geojson format so they are directly provided to leaflet and shown on the map.
 Application uses standard geolocation [web location API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation)
 
+App uses custom mapbox layer with higlighted buildings and roads.
 
 # Backend
 
