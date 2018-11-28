@@ -58,8 +58,10 @@ I also created ways_parking view where aj merge intersecting roads to malls an u
 ### Response
 
 API responds with json containing 2 keys, `name` and `geojson`. 
-{
-  "name": "Aupark",
-  "geojson": contains a geojson with shop point, shopping mall polygon, or object with ways and parking lots.
+`
+{  
+  "name": "Aupark",  
+  "geojson": contains a geojson with shop point, shopping mall polygon, or object with ways and parking lots.  
 }
+`
 
