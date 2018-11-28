@@ -9,8 +9,10 @@ Features:
 - Show shopping centres with parking lots and coresponding roads
 
 This is ShopSearch in action:
-
 ![Screenshot](screenshot.png)
+
+With custom layer:
+![Screenshot](screenshot2.png)
 
 The application consists of 2 parts, the client which is a [frontend web application](#frontend) is using [knockout.js](https://knockoutjs.com/), [leaflet](https://leafletjs.com/) with [mapbox](https://www.mapbox.com) tiles to show data. The [backend application](#backend) written in Typescript runs on [node.js](https://nodejs.org/en/) with [Express](https://expressjs.com/), it is connected with Postgre database (with PostGIS). Connection between node.js an database is hanled by [node-postgres](https://node-postgres.com/). The frontend application communicates with backend using a [REST API](#api).
 
